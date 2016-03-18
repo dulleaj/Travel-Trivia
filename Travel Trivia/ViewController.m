@@ -49,6 +49,8 @@
     self.percentCorrectLabel.hidden = YES;
     self.helpButtonAnswerLabel.hidden = YES;
     self.helpButton.hidden = YES;
+    
+    self.questionLabel.adjustsFontSizeToFitWidth = YES;
 
 }
 

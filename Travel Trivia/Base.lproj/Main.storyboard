@@ -17,15 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-oB-Xb7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Q" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-oB-Xb7">
                                 <rect key="frame" x="200" y="58" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0Da-ub-rfX"/>
                                     <constraint firstAttribute="height" constant="50" id="DRH-pL-6dw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Da-ub-rfX"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuH-eG-5xs">
                                 <rect key="frame" x="250" y="356" width="100" height="50"/>
@@ -64,7 +69,7 @@
                                     <constraint firstAttribute="width" constant="200" id="Su7-8h-NbS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="80" y="454" width="42" height="21"/>
@@ -171,6 +176,7 @@
                             <constraint firstItem="ewH-F2-iME" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="fsx-qT-rgZ"/>
                             <constraint firstItem="TUq-7O-sxW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jUf-av-joN"/>
                             <constraint firstItem="28W-dj-zTC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kbh-ub-Jy3"/>
+                            <constraint firstItem="aT8-oB-Xb7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="mIj-9p-V05"/>
                             <constraint firstItem="aT8-oB-Xb7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mY5-jh-N0o"/>
                             <constraint firstItem="Ftm-ec-iIN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="max-q9-mAA"/>
                             <constraint firstItem="XuH-eG-5xs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qCF-Bn-q6K"/>
