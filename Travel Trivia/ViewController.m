@@ -27,6 +27,10 @@
 @property int totalCorrectAnswers;
 @property int totalIncorrectAnswers;
 @property float percentCorrect;
+@property (weak, nonatomic) IBOutlet UIButton *helpButton;
+@property (weak, nonatomic) IBOutlet UILabel *helpButtonAnswerLabel;
+@property Trivia *incorrectLog;
+@property int count;
 
 @end
 
@@ -43,13 +47,18 @@
     self.cButton.hidden = YES;
     self.dButton.hidden = YES;
     self.percentCorrectLabel.hidden = YES;
+    self.helpButtonAnswerLabel.hidden = YES;
+    self.helpButton.hidden = YES;
 
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 - (IBAction)startButtonWasTapped:(id)sender {
     
     self.startButton.hidden = YES;
@@ -63,11 +72,20 @@
     self.dButton.hidden = NO;
     self.dButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     self.percentCorrectLabel.hidden = NO;
+    self.helpButtonAnswerLabel.hidden = YES;
+    self.helpButton.hidden = NO;
+    self.helpButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self askQuestion];
     //use text view for question
+    
+    self.incorrectAnswers = [[NSMutableArray alloc] init];
+    
 }
 
+
 - (void) askQuestion {
+    
+    self.helpButtonAnswerLabel.hidden = YES;
     
     self.randomQuestion = [[Trivia alloc] init];
       
@@ -195,19 +213,23 @@
     //http://stackoverflow.com/questions/5755197/simple-percentange-calculation
     //http://stackoverflow.com/questions/8785468/convert-float-to-int-in-objective-c
     
-    [self.incorrectAnswers addObject:self.randomQuestion];
+    [self.incorrectAnswers addObject:self.randomQuestion.question];
     
-    for (Trivia *incorrectLog in self.incorrectAnswers){
-        NSLog(@"Question = %@",incorrectLog.question);
-        NSLog(@"Answer = %@",incorrectLog.answer);
+    //self.incorrectLog = self.incorrectAnswers[0];
+    NSLog(@"Question = %@",_randomQuestion.question);
+    NSLog(@"Answer = %@",_randomQuestion.answer);
+  
+}
+
+- (IBAction)helpButtonWasTapped:(id)sender {
+    
+    id objectFromArray = [self.incorrectAnswers lastObject];
+    
+    self.helpButtonAnswerLabel.text = [NSString stringWithFormat:@"%@",objectFromArray];
+    
+    self.helpButtonAnswerLabel.hidden = NO;
     
     }
 
-    
-    
-}
-
-// create a new app - Then - have another button that is "Help", which, when clicked, will tell them which question they've gotten wrong. Will need a custom class for each question, will want question to store and present everything, and use an array to store questions. Also - on the top left of screen, have a running percentage of how many questions they've gotten correct.
-    
 
 @end
