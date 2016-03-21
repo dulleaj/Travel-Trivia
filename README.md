@@ -12,3 +12,5 @@ Understanding when and how to use a custom class, how to use different methods a
 
 
 My Struggles:
+
+Creating custom classes, referencing the last question added to an MSMutable Array.
